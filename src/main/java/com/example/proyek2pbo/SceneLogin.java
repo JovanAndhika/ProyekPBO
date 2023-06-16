@@ -52,7 +52,7 @@ public class SceneLogin {
             String querymember = "select count(1) from member where email = '" + email.getText()
                     + "' and password ='"+password.getText()+"' ";
 
-            String querystaf = "select count(1) from staf where email = '" + email.getText()
+            String querystaf = "select count(1) from staff where email = '" + email.getText()
                     + "' and password ='"+password.getText()+"' ";
 
             Statement st = con.createStatement();

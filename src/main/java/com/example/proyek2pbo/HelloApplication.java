@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
 
     //DATABASE CONNECTION
     final static String driver = "com.mysql.cj.jdbc.Driver";
-    final static String databaseName = "pbo";
+    final static String databaseName = "laundry";
     final static String url = "jdbc:mysql://localhost/" + databaseName;
     final static String user = "root";
     final static String password = "";
