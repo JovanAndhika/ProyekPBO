@@ -38,13 +38,13 @@ public class SceneMember {
             //        "VALUES" + "('" + email.getText() + "','" + namadepan.getText() + "','" + namabelakang.getText() + "','"
             //        + nomorhp.getText() + "','"+ alamat.getText()+"','"+password.getText()+"')";
 
-            String query = "INSERT INTO member (email, namadepan, namabelakang, nomorhp, alamat, password) VALUES (?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO member (nama_depan,nama_belakang,alamat,no_hp,email,password) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = con.prepareStatement(query);
-            preparedStatement.setString(1, email.getText());
-            preparedStatement.setString(2, namadepan.getText());
-            preparedStatement.setString(3, namabelakang.getText());
+            preparedStatement.setString(1, namadepan.getText());
+            preparedStatement.setString(2, namabelakang.getText());
+            preparedStatement.setString(3, alamat.getText());
             preparedStatement.setString(4, nomorhp.getText());
-            preparedStatement.setString(5, alamat.getText());
+            preparedStatement.setString(5, email.getText());
             preparedStatement.setString(6, password.getText());
 
             preparedStatement.executeUpdate();
