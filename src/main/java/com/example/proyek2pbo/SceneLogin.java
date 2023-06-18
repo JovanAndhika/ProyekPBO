@@ -50,10 +50,10 @@ public class SceneLogin {
         try {
             Connection con = HelloApplication.createDatabaseConnection();
             String querymember = "select count(1) from member where email = '" + email.getText()
-                    + "' and password ='"+password.getText()+"' ";
+                    + "' and password ='"+password.getText()+"'";
 
             String querystaf = "select count(1) from staff where email = '" + email.getText()
-                    + "' and password ='"+password.getText()+"' ";
+                    + "' and password ='"+password.getText()+"'";
 
             Statement st = con.createStatement();
             ResultSet rsmember = st.executeQuery(querymember);
