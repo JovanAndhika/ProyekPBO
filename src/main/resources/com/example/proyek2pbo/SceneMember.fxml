@@ -41,5 +41,6 @@
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data sudah ada" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
       <TextField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="7" />
       <Text fx:id="keterangan" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Button fx:id="back" mnemonicParsing="false" onAction="#SwitchkeSceneLogin" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
    </children>
 </GridPane>

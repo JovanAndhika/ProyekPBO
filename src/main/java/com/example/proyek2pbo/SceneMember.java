@@ -28,6 +28,8 @@ public class SceneMember {
     private TextField password;
     @FXML
     private Button submitdata;
+    @FXML
+    private Button back;
 
 
     @FXML
@@ -83,6 +85,7 @@ public class SceneMember {
         alert.initOwner(_owner);
         alert.show();
     }
+
 
 
 }

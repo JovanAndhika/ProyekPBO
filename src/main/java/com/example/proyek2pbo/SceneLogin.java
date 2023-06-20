@@ -8,10 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class SceneLogin {
     @FXML
@@ -52,25 +49,19 @@ public class SceneLogin {
             String querymember = "select count(1) from member where email = '" + email.getText()
                     + "' and password ='"+password.getText()+"'";
 
-            String querystaf = "select count(1) from staff where email = '" + email.getText()
+            PreparedStatement ps = con.prepareStatement(querymember);
+            ps.execute();
+            SwitchSceneMember();
+
+
+            querymember = "select count(1) from staff where email = '" + email.getText()
                     + "' and password ='"+password.getText()+"'";
+            ps = con.prepareStatement(querymember);
+            ps.execute();
+            SwitchSceneStaf();
 
-            Statement st = con.createStatement();
-            ResultSet rsmember = st.executeQuery(querymember);
-            ResultSet rsstaf = st.executeQuery(querystaf);
-
-            while(rsmember.next()){
-                if(rsmember.getInt(1) == 1){
-                    cobaScene();
-                }else if(rsstaf.getInt(1) == 1){
-                    SwitchkeSceneStaf();
-                }
-                else{
-                    invalid.setText("invalid, email atau pass salah");
-                }
-            }
-            con.close();
         } catch (ClassNotFoundException e) {
+            invalid.setText("invalid, email atau pass salah");
             throw new RuntimeException(e);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -80,7 +71,7 @@ public class SceneLogin {
 
 
     @FXML
-    protected void SwitchkeSceneStaf(){
+    protected void SwitchSceneStaf(){
         HelloApplication app = HelloApplication.getApplicationInstance();
         Stage primaryStage = app.getPrimaryStage();
         Scene scene_staf = app.getSceneStaf();
@@ -90,7 +81,7 @@ public class SceneLogin {
 
 
     @FXML
-    protected void cobaScene(){
+    protected void SwitchSceneMember(){
         HelloApplication app = HelloApplication.getApplicationInstance();
         Stage primaryStage = app.getPrimaryStage();
         Scene scene_coba = app.getSceneStaf();
