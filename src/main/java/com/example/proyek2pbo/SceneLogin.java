@@ -60,6 +60,8 @@ public class SceneLogin {
             ps.execute();
             SwitchSceneStaf();
 
+            con.close();
+
         } catch (ClassNotFoundException e) {
             invalid.setText("invalid, email atau pass salah");
             throw new RuntimeException(e);
