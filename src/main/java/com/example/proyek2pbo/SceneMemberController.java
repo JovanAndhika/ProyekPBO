@@ -11,7 +11,7 @@ import javafx.stage.Window;
 
 import java.sql.*;
 
-public class SceneMember {
+public class SceneMemberController {
     @FXML
     private Text keterangan;
     @FXML

@@ -29,17 +29,25 @@ public class HelloApplication extends Application {
     //SET STAGE
     private Stage primaryStage;
     private Scene SceneLogin;
-    private com.example.proyek2pbo.SceneLogin sceneLoginController;
+    private SceneLoginController sceneLoginController;
 
 
     //Scene untuk daftar member
     private Scene sceneMember;
-    private SceneMember sceneMemberController;
+    private SceneMemberController sceneMemberController;
 
 
     //Scene untuk daftar staf
     private Scene sceneStaf;
     private SceneStaf sceneStafController;
+
+
+
+    //Scene untuk komplain
+    private Scene sceneKomplain;
+    private SceneKomplainController sceneKomplainController;
+
+
 
 
     public HelloApplication(){
@@ -69,8 +77,12 @@ public class HelloApplication extends Application {
         sceneStaf = new Scene(fxmlLoader.load(), 800, 600);
         sceneStafController =  fxmlLoader.getController();
 
+        fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SceneKomplain.fxml"));
+        sceneKomplain = new Scene(fxmlLoader.load(), 800, 600);
+        sceneKomplainController = fxmlLoader.getController();
+
         stage.setTitle("Hello!");
-        stage.setScene(SceneLogin);
+        stage.setScene(sceneKomplain);
         stage.show();
     }
 
@@ -86,7 +98,7 @@ public class HelloApplication extends Application {
         return SceneLogin;
     }
 
-    public com.example.proyek2pbo.SceneLogin getSceneLoginController() {
+    public SceneLoginController getSceneLoginController() {
         return sceneLoginController;
     }
 
@@ -94,7 +106,7 @@ public class HelloApplication extends Application {
         return sceneMember;
     }
 
-    public SceneMember getSceneMemberController() {
+    public SceneMemberController getSceneMemberController() {
         return sceneMemberController;
     }
 
@@ -104,5 +116,13 @@ public class HelloApplication extends Application {
 
     public SceneStaf getSceneStafController() {
         return sceneStafController;
+    }
+
+    public Scene getSceneKomplain() {
+        return sceneKomplain;
+    }
+
+    public SceneKomplainController getSceneKomplainController() {
+        return sceneKomplainController;
     }
 }
