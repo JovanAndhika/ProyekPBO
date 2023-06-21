@@ -58,15 +58,15 @@ public class HelloApplication extends Application {
         this.primaryStage = stage;
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SceneLogin.fxml"));
-        SceneLogin =  new Scene(fxmlLoader.load(), 320, 240);
+        SceneLogin =  new Scene(fxmlLoader.load(), 800, 600);
         sceneLoginController = fxmlLoader.getController();
 
         fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SceneMember.fxml"));
-        sceneMember = new Scene(fxmlLoader.load(), 320, 240);
+        sceneMember = new Scene(fxmlLoader.load(), 800, 600);
         sceneMemberController =  fxmlLoader.getController();
 
         fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SceneStaf.fxml"));
-        sceneStaf = new Scene(fxmlLoader.load(), 320, 240);
+        sceneStaf = new Scene(fxmlLoader.load(), 800, 600);
         sceneStafController =  fxmlLoader.getController();
 
         stage.setTitle("Hello!");
